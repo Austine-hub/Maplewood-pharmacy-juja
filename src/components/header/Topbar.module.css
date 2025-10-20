@@ -1,0 +1,169 @@
+.topbar {
+  background: linear-gradient(135deg, #c77f4c 0%, #c09815 100%);
+  color: white;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1200;
+}
+
+.container {
+  max-width: 1001px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Brand Section */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.logoIcon {
+  font-size: 1.75rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.brandName {
+  color: aliceblue;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+/* Tagline */
+.tagline {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 400;
+  opacity: 0.95;
+  flex: 1 1 auto;
+  min-width: 200px;
+}
+
+/* Contact Actions */
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.callBtn,
+.whatsappBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.callBtn {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.callBtn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.whatsappBtn {
+  background-color: #25d366;
+  color: white;
+}
+
+.whatsappBtn:hover {
+  background-color: #20ba5a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+}
+
+.icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* Tablet Breakpoint */
+@media (max-width: 768px) {
+  .container {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .brand {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+
+  .tagline {
+    flex: 1 1 100%;
+    font-size: 0.85rem;
+  }
+
+  .actions {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+}
+
+/* Mobile Breakpoint */
+@media (max-width: 480px) {
+  .topbar {
+    padding: 1rem 0.75rem;
+  }
+
+  .brandName {
+    font-size: 1.1rem;
+  }
+
+  .logoIcon {
+    font-size: 1.5rem;
+  }
+
+  .tagline {
+    font-size: 0.8rem;
+    padding: 0 0.5rem;
+  }
+
+  .actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .callBtn,
+  .whatsappBtn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .icon {
+    font-size: 1rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+  .brandName {
+    font-size: 1rem;
+  }
+
+  .callBtn span,
+  .whatsappBtn span {
+    font-size: 0.85rem;
+  }
+}
