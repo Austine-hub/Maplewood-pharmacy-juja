@@ -9,7 +9,7 @@ import App from "./App.tsx";
 import "./index.css"; // ✅ Global reset + base styles
 
 // === Root Element Check (Type-Safe) ===
-const container = document.getElementById("root");
+const container = document.getElementById("root") as HTMLElement | null;
 
 if (!container) {
   throw new Error("❌ Root container not found. Ensure #root exists in index.html");
@@ -21,10 +21,10 @@ const root = createRoot(container);
 // === Render Application ===
 root.render(
   <StrictMode>
-    {/* 
-      BrowserRouter handles routing.
-      basename can be configured if deploying under a subpath.
-      Example: <BrowserRouter basename="/pharmacy" />
+    {/*
+      BrowserRouter manages routing using the HTML5 History API.
+      - Add `basename="/your-subpath"` if deploying under a nested route.
+      - Handles route refreshes gracefully (when appType: "spa" in vite.config.ts).
     */}
     <BrowserRouter>
       <App />
@@ -34,8 +34,9 @@ root.render(
 
 // ===============================================================
 // Notes:
-// ✅ Uses React.StrictMode for runtime warnings & accessibility checks
+// ✅ Uses React.StrictMode for runtime + accessibility warnings
 // ✅ Ensures root element exists before rendering (prevents silent crashes)
-// ✅ Preps for PWA or hydration compatibility
-// ✅ Ready for accessibility auditing (React Aria / Lighthouse)
+// ✅ Compatible with Vite’s SPA history fallback via appType: "spa"
+// ✅ Future-ready for PWA / SSR / Hydration upgrades
+// ✅ Passes TypeScript strict checks (no implicit any / unsafe DOM access)
 // ===============================================================
